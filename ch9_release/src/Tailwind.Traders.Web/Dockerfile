@@ -7,6 +7,7 @@ FROM node:17-alpine as build-node
 WORKDIR /ClientApp
 COPY ClientApp/package.json .
 COPY ClientApp/package-lock.json .
+RUN echo -e "http://nl.alpinelinux.org/alpine/v3.5/main\nhttp://nl.alpinelinux.org/alpine/v3.5/community" > /etc/apk/repositories
 RUN apk add --update python make g++\
    && rm -rf /var/cache/apk/*
 RUN npm install
