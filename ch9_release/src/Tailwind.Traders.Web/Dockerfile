@@ -13,6 +13,8 @@ RUN echo http://mirror.yandex.ru/mirrors/alpine/v3.5/main > /etc/apk/repositorie
 RUN apk update \
  && apk add --no-cache \
 ...
+RUN apk add --update python make g++\
+   && rm -rf /var/cache/apk/*
 RUN npm install
 COPY ClientApp/ .
 RUN npm run build
