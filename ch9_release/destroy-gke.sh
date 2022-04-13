@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Set parameters
-GKE_PROJECT=valid-octagon-330106
-GKE_CLUSTER=xyz-demo-cluster
-GKE_SERVICE_ACCOUNT=xyz-serviceaccount
-GKE_ZONE=europe-west3-a
+  GKE_CLUSTER: mb-cluster
+  GKE_SERVICE_ACCOUNT: mb-serviceaccount
+  GKE_ZONE: us-central1-c
+
 
 gcloud config set project $GKE_PROJECT
 
