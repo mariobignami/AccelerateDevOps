@@ -7,7 +7,7 @@ FROM node:17-alpine as build-node
 WORKDIR /ClientApp
 COPY ClientApp/package.json .
 COPY ClientApp/package-lock.json .
-RUN apk add --update --no-cache curl jq py3-configobj py3-pip py3-setuptools python3 python3-dev
+RUN apk add --update --no-cache curl py-pip*
 RUN npm install
 COPY ClientApp/ .
 RUN npm run build
