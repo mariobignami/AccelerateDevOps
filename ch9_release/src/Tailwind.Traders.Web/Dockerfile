@@ -7,7 +7,9 @@ FROM node:17-alpine as build-node
 WORKDIR /ClientApp
 COPY ClientApp/package.json .
 COPY ClientApp/package-lock.json .
-RUN apk add --update python make g++\
+#RUN apk add --update python make g++\
+#   && rm -rf /var/cache/apk/*
+RUN apk add update && apk upgrade && apk add python3 g++\
    && rm -rf /var/cache/apk/*
 RUN npm install
 COPY ClientApp/ .
