@@ -9,8 +9,7 @@ COPY ClientApp/package.json .
 COPY ClientApp/package-lock.json .
 #RUN apk add --update python make g++\
 #   && rm -rf /var/cache/apk/*
-RUN apk add update && apk upgrade && apk add python3 g++\
-   && rm -rf /var/cache/apk/*
+RUN apk add --no-cache --virtual .gyp python3 make g++
 RUN npm install
 COPY ClientApp/ .
 RUN npm run build
